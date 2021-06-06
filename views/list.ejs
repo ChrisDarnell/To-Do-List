@@ -11,23 +11,24 @@
 
 <body>
 
-    <h1><%= kindOfDay %> </h1>
+    <div class="box" id="heading">
+        <h1><%= kindOfDay %> </h1>
+    </div>
 
-    <ul>
-        <li>Gym</li>
-        <li>Tan</li>
-        <li>Laundry</li>
+    <div class="box">
         <% for(var i = 0; i<newListItems.length; i++) {  %>
-        <li><%= newListItems[i] %> </li>
-
+        <div class="item">
+            <input type="checkbox">
+            <p><%= newListItems[i] %> </p>
+        </div>
         <% } %>
+        <form class="item" action="/" method="POST">
+            <input type="text" name="newItem" placeholder="Add List Item" autocomplete="off">
+            <button type="submit" name="button">+</button>
+        </form>
+    </div>
 
-    </ul>
-
-    <form action="/" method="POST">
-        <input type="text" name="newItem" placeholder="Add List Item">
-        <button type="submit" name="button">Add</button>
-    </form>
+    
 
 
 
