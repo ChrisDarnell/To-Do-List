@@ -16,6 +16,11 @@
         <li>Breakfast</li>
         <li>Lunch</li>
         <li>Dinner</li>
+        <% for(var i = 0; i<newListItems.length; i++) {  %> 
+            <li><%= newListItems[i] %> </li>
+
+      <% } %> 
+
     </ul>
 
     <form action="/" method="POST">

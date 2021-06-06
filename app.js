@@ -4,6 +4,8 @@ const express = require("express");
 
 const app = express();
 
+var itemsToAdd = [];
+
 app.use(express.urlencoded({
     extended: true
   }));
@@ -20,13 +22,16 @@ app.get("/", (req, res) => {
     var day = today.toLocaleDateString("en-US", options);
 
     res.render("list", {
-        kindOfDay: day
+        kindOfDay: day,
+        newListItems: itemsToAdd
     });
 });
 
 app.post("/", (req, res) => {
-    var itemToAdd = req.body.newItem;
-    console.log(itemToAdd);
+    itemToAdd = req.body.newItem;
+    itemsToAdd.push(itemToAdd);
+
+    res.redirect("/");
 });
 
 
