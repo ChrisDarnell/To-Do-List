@@ -4,6 +4,9 @@ const express = require("express");
 
 const app = express();
 
+app.use(express.urlencoded({
+    extended: true
+  }));
 app.set("view engine", "ejs");
 
 app.get("/", (req, res) => {
@@ -19,6 +22,11 @@ app.get("/", (req, res) => {
     res.render("list", {
         kindOfDay: day
     });
+});
+
+app.post("/", (req, res) => {
+    var itemToAdd = req.body.newItem;
+    console.log(itemToAdd);
 });
 
 
