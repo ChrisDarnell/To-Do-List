@@ -5,21 +5,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
     <title>To Do List by Chris Darnell</title>
 </head>
 
 <body>
-    
+
     <h1><%= kindOfDay %> </h1>
 
     <ul>
-        <li>Breakfast</li>
-        <li>Lunch</li>
-        <li>Dinner</li>
-        <% for(var i = 0; i<newListItems.length; i++) {  %> 
-            <li><%= newListItems[i] %> </li>
+        <li>Gym</li>
+        <li>Tan</li>
+        <li>Laundry</li>
+        <% for(var i = 0; i<newListItems.length; i++) {  %>
+        <li><%= newListItems[i] %> </li>
 
-      <% } %> 
+        <% } %>
 
     </ul>
 
@@ -28,7 +29,7 @@
         <button type="submit" name="button">Add</button>
     </form>
 
-   
+
 
 
 
