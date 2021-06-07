@@ -3,12 +3,9 @@
 const express = require("express");
 const date = require(__dirname +"/date.js");
 
-
-
 const app = express();
-
-let items = [];
-let workItems = [];
+const items = [];
+const workItems = [];
 
 app.use(express.urlencoded({
     extended: true
@@ -21,7 +18,7 @@ app.set("view engine", "ejs");
 
 app.get("/", (req, res) => {
 
-    let day = date();
+    const day = date.getDate();
 
     res.render("list", {
         listTitle: day,
@@ -30,7 +27,7 @@ app.get("/", (req, res) => {
 });
 
 app.post("/", (req, res) => {
-    let item = req.body.newItem;
+    const item = req.body.newItem;
     if (req.body.list === "Work") {
         workItems.push(item);
         res.redirect("/work");
