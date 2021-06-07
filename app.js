@@ -34,8 +34,6 @@ app.get("/", (req, res) => {
 
 app.post("/", (req, res) => {
     let item = req.body.newItem;
-    let testVar = req.body.list;
-    console.log(testVar);
     if (req.body.list === "Work") {
         workItems.push(item);
         res.redirect("/work");
